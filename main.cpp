@@ -68,7 +68,7 @@ void cpu_core_worker(std::stop_token stop_tok, int core_id) {
 
     
             while (proc->completed_commands < proc->total_commands) {
-                std::this_thread::sleep_for(std::chrono::milliseconds(10)); // Simulate work burst
+                std::this_thread::sleep_for(std::chrono::milliseconds(100)); // Simulate work burst
                 
                 int current_cmd = ++proc->completed_commands;
                 std::string ts = get_current_timestamp();
